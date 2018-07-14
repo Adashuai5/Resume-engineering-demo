@@ -1,34 +1,69 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>周元达的个人简历</title>
-    <link rel="stylesheet" href="./a.css">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./loading.css">
     <script src="//at.alicdn.com/t/font_710248_2v0k8bog7oc.js"></script>
     <style type="text/css">
         .icon {
-           width: 1em; height: 1em;
-           vertical-align: -0.15em;
-           fill: currentColor;
-           overflow: hidden;
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+        .site-welcome{
+            display: none;
+            position: fixed;
+            left: 0; top: 0; width: 100%; height: 100%;
+            background: rgb(167, 166, 166);
+            z-index: 1;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .site-welcome.active{
+            display: flex;
         }
     </style>
 </head>
+
 <body>
+    <div id ="siteWelcome" class="site-welcome active">
+        <div class="loading"></div>
+    </div>   
     <div class="topNavBar">
         <div class="topNavBar-inner clearfix">
             <a href="#" class="logo" alt="logo" style:="float:left">
-                <span class="rs">RS</span><span class="card">card</span>
+                <span class="rs">RS</span>
+                <span class="card">card</span>
             </a>
             <nav>
                 <ul class="clearfix">
-                    <li><a href="#">关于</a></li>
-                    <li><a href="#">技能</a></li>
-                    <li><a href="#">作品</a></li>
-                    <li><a href="#">博客</a></li>
-                    <li><a href="#">日历</a></li>
-                    <li><a href="#">联系方式</a></li>
-                    <li><a href="#">其他</a></li>
+                    <li>
+                        <a href="#">关于</a>
+                    </li>
+                    <li>
+                        <a href="#">技能</a>
+                    </li>
+                    <li>
+                        <a href="#">作品</a>
+                    </li>
+                    <li>
+                        <a href="#">博客</a>
+                    </li>
+                    <li>
+                        <a href="#">日历</a>
+                    </li>
+                    <li>
+                        <a href="#">联系方式</a>
+                    </li>
+                    <li>
+                        <a href="#">其他</a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -62,28 +97,38 @@
                 </div>
             </div>
             <footer class="media">
-                <a href="#"><svg class="icon" aria-hidden="true">
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-githublogo"></use>
-                    </svg></a>
-                <a href="#"><svg class="icon" aria-hidden="true">
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-zhihu-circle-fill"></use>
-                    </svg></a>
-                <a href="#"><svg class="icon" aria-hidden="true">
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-changyonglogo44"></use>
-                    </svg></a>
-                <a href="#"><svg class="icon" aria-hidden="true">
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-logo-qq"></use>
-                    </svg></a>
-                <a href="#"><svg class="icon" aria-hidden="true">
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-weixin-copy"></use>
-                    </svg></a>
-            </footer>           
+                    </svg>
+                </a>
+            </footer>
         </div>
         <p class="resumedownload-wrapper">
             <a class="resumedownload" href="./resume.pdf" target="_blank" download>下载PDF简历</a>
         </p>
         <p class="selfIntroduce">周元达，前端新人</p>
-    </main> 
+    </main>
     <section class="skills">
         <h2>技能</h2>
         <ol class="clearfix">
@@ -91,49 +136,49 @@
                 <h3>
                     HTML 5 &amp; CSS 3
                 </h3>
-            <div class="progressBar">
-                <div class="progress" style="width: 30%"></div>
-            </div>
+                <div class="progressBar">
+                    <div class="progress" style="width: 30%"></div>
+                </div>
             </li>
             <li>
                 <h3>
                     JavaScript
                 </h3>
-            <div class="progressBar">
-                <div class="progress" style="width: 10%"></div>
-            </div>
+                <div class="progressBar">
+                    <div class="progress" style="width: 10%"></div>
+                </div>
             </li>
             <li>
                 <h3>
                     jQuery
                 </h3>
-            <div class="progressBar">
-                <div class="progress" style="width: 0%"></div>
-            </div>
+                <div class="progressBar">
+                    <div class="progress" style="width: 0%"></div>
+                </div>
             </li>
             <li>
                 <h3>
                     Vue
                 </h3>
-            <div class="progressBar">
-                <div class="progress" style="width: 0%"></div>
-            </div>
+                <div class="progressBar">
+                    <div class="progress" style="width: 0%"></div>
+                </div>
             </li>
             <li>
                 <h3>
                     React
                 </h3>
-            <div class="progressBar">
-                <div class="progress" style="width: 0%"></div>
-            </div>
+                <div class="progressBar">
+                    <div class="progress" style="width: 0%"></div>
+                </div>
             </li>
             <li>
                 <h3>
                     HTTP
                 </h3>
-            <div class="progressBar">
-                <div class="progress" style="width: 20%"></div>
-            </div>
+                <div class="progressBar">
+                    <div class="progress" style="width: 20%"></div>
+                </div>
             </li>
         </ol>
     </section>
@@ -150,17 +195,17 @@
             </div>
         </nav>
         <script>
-            portfolio1.onclick= function(){
+            portfolio1.onclick = function () {
                 portfolioBar.className = 'bar state-1'
             }
         </script>
         <script>
-            portfolio2.onclick= function(){
+            portfolio2.onclick = function () {
                 portfolioBar.className = 'bar state-2'
             }
         </script>
         <script>
-            portfolio3.onclick= function(){
+            portfolio3.onclick = function () {
                 portfolioBar.className = 'bar state-3'
             }
         </script>
@@ -175,6 +220,10 @@
                 <img src="./img/3.jpg" alt="作品3">
             </div>
         </div>
-    </section>    
+    </section>
+    <script>
+        siteWelcome.classList.remove('active')
+    </script>
 </body>
+
 </html>

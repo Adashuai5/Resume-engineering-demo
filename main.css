@@ -1,5 +1,5 @@
 body{
-    background: #efefef;
+ background: #efefef;
     margin: 0;
 }
 *{
@@ -30,11 +30,11 @@ h1,h2,h3,h4,h5,h6{
     padding: 22px 0 22px 0;
     position: fixed;
     width: 100%;
-}
-.topNavBar-inner{
-    padding: 0 16px;
     top: 0px;
     left: 0px;
+}
+.topNavBar-inner{
+    padding: 0 16px; 
 }
 .topNavBar nav{
     float: right;
