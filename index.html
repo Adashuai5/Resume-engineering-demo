@@ -86,7 +86,7 @@
         <div class="mask"></div>
     </div>
     <main>
-        <div class="usercard" id="siteAbout">
+        <div data-x class="usercard" id="siteAbout">
             <div class="pictureAndtext clearfix">
                 <div class="picture">
                     <img src="./img/avatar.jpg" height=347 wight=299 alt="头像">
@@ -143,7 +143,7 @@
         </p>
         <p class="selfIntroduce">周元达，前端新人</p>
     </main>
-    <section class="skills" id="siteSkills">
+    <section data-x class="skills" id="siteSkills">
         <h2>技能</h2>
         <ol class="clearfix">
             <li>
@@ -196,7 +196,7 @@
             </li>
         </ol>
     </section>
-    <section class="portfolio" id="siteWorks">
+    <section data-x class="portfolio" id="siteWorks">
         <h2>作品集</h2>
         <nav>
             <ol class="clearfix">
@@ -247,6 +247,26 @@
             } else {
                 topNavBar.classList.remove('sticky')
             }
+
+            let specialTags = document.querySelectorAll('[data-x]')
+            let minIndex = 0
+            for (let i = 1; i < specialTags.length; i++) {
+                if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop -
+                        window.scrollY))
+                    minIndex = i
+            }
+            for (let i = 0; i < specialTags.length; i++) {
+                specialTags[i].classList.remove('active')
+            }
+            specialTags[minIndex].classList.add('active')
+            let id = specialTags[minIndex].id
+            let a = document.querySelector('a[href="#' + id + '"]')
+            let li = a.parentNode
+            let brothersAndMe = li.parentNode.children
+            for (let i = 0; i < brothersAndMe.length; i++) {
+                brothersAndMe[i].classList.remove('active')
+            }
+            li.classList.add('active')
         }
 
         let liTags = document.querySelectorAll('nav.menu > ul > li')
@@ -294,7 +314,6 @@
                         window.scrollTo(0, coords.y)
                     })
                     .start();
-
             }
         }
     </script>
