@@ -33,8 +33,13 @@ h6 {
     font-weight: normal;
 }
 
-[data-x].active{
-    outline: 10px solid red;
+[data-x].offset {
+    transform: translateY(400px);
+}
+
+[data-x] {
+    transform: translateY(0px);
+    transition: all 0.5s;
 }
 
 .clearfix::after {
@@ -94,7 +99,8 @@ h6 {
     position: relative;
 }
 
-.topNavBar nav>ul>li.active>a::after {
+.topNavBar nav>ul>li.active>a::after,
+.topNavBar nav>ul>li.highlight>a::after {
     content: '';
     display: block;
     top: 100%;
