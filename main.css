@@ -324,6 +324,7 @@ section.portfolio>h2 {
     font-size: 34px;
     line-height: 1.2;
     font-weight: 600;
+    margin-bottom: 32px;
 }
 
 section.skills h3 {
@@ -366,79 +367,34 @@ section.skills .progress {
     transition: all 0.5s;
 }
 
-section.skills.offset .progress{
+section.skills.offset .progress {
     transform: translateX(-100%);
 }
 
 section.portfolio {
     text-align: center;
-}
-
-section.portfolio>nav {
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 30px;
-}
-
-section.portfolio>nav>ol {
-    display: inline-block;
-    vertical-align: top;
-}
-
-section.portfolio .bar {
-    height: 5px;
-    background: white;
-    border-radius: 2px;
-    margin-top: 7px;
-    margin-bottom: 30px;
-}
-
-section.portfolio .bar-inner {
-    height: 100%;
-    background: #e8676b;
-    border-radius: 2px;
-    transition: all 0.3s;
-}
-
-section.portfolio .bar.state-1 .bar-inner {
-    height: 100%;
-    width: 14%;
-    background: #e8676b;
-    border-radius: 2px;
-}
-
-section.portfolio .bar.state-2 .bar-inner {
-    height: 100%;
-    width: 14%;
-    margin-left: 72px;
-    background: #e8676b;
-    border-radius: 2px;
-}
-
-section.portfolio .bar.state-3 .bar-inner {
-    height: 100%;
-    width: 39%;
-    margin-left: 143px;
-    background: #e8676b;
-    border-radius: 2px;
-}
-
-section.portfolio>nav>ol>li {
-    float: left;
-    margin-left: 40px;
-    cursor: pointer;
-}
-
-section.portfolio>nav>ol>li:first-child {
-    margin-left: 0;
-}
-
-section.portfolio .works {
-    position: relative;
     margin-bottom: 100px;
+    max-width: 720px;
 }
 
-section.portfolio .works>.big,
-section.portfolio .works>.small {
-    position: absolute;
+section.portfolio .swiper-container {
+    width: 668px;
+    height: 501px;
+}
+
+section.portfolio .swiper-button-prev,
+section.portfolio .swiper-button-next {
+    background-color: white;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    right: 100%;
+    left: auto;
+    display: flex;
+    
+}
+
+section.portfolio .swiper-button-next {
+    left: 100%;
+    right: auto;
 }
