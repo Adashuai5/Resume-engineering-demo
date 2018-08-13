@@ -390,8 +390,8 @@ section.portfolio .swiper-button-next {
     border-radius: 50%;
     right: 100%;
     left: auto;
-    display: flex;
-    
+/* 由于利用父元素的方法均无法让按钮垂直居中，而元素固定宽高，因此直接调高度 */
+    top: 313px;
 }
 
 section.portfolio .swiper-button-next {
