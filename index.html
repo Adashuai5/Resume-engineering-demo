@@ -192,10 +192,13 @@
             <div class="swiper-button-next"></div>
         </div>
     </section>
-    <section>
+    <section class="message">
         <h2>留言</h2>
         <ol id="messageList"></ol>
-        <form id="postMessageForm" style="width: 1000px;margin: 50px auto;">
+        <form id="postMessageForm">
+            <label for="name">姓名</label>
+            <input type="text" name="name">
+            <label for="content">内容</label>
             <input type="text" name="content">
             <input type="submit" value="提交">
         </form>
