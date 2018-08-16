@@ -6,6 +6,17 @@ AV.init({
   appKey: APP_KEY
 });
 
+var query = new AV.Query('Message');
+query.find().then(function (messages) {
+  let array = messages.map((item) => item.attributes)
+  array.forEach((item) => {
+    let li = document.createElement('li')
+    li.innerText = item.content
+    let messageList = document.querySelector('#messageList') 
+    messageList.appendChild(li)
+  })
+})
+
 let myForm = document.querySelector('#postMessageForm')
 myForm.addEventListener('submit', function (e) {
   e.preventDefault()
@@ -15,19 +26,19 @@ myForm.addEventListener('submit', function (e) {
   message.save({
     content: content
   }).then(function (object) {
-    alert('提交成功');
+    window.location.reload()
     console.log(object)
   })
 })
 
-//创建 TestObject 表
-var TestObject = AV.Object.extend('TestObject');
-//在表中创建一行数据
-var testObject = new TestObject();
-//数据内容是 words:'Hello World'
-//若保存成功，则运行 alert('')
-testObject.save({
-  words: 'Hello World!'
-}).then(function(object) {
-  alert('LeanCloud Rocks!');
-})
+// //创建 TestObject 表
+// var TestObject = AV.Object.extend('TestObject');
+// //在表中创建一行数据
+// var testObject = new TestObject();
+// //数据内容是 words:'Hello World'
+// //若保存成功，则运行 alert('')
+// testObject.save({
+//   words: 'Hello World!'
+// }).then(function(object) {
+//   alert('LeanCloud Rocks!');
+// })
