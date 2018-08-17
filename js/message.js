@@ -1,5 +1,7 @@
 ! function () {
+	// MVC 的 V
 	var view = document.querySelector('section.message')
+	//添加 M
 	var model = {
 		init: function () {
 			var APP_ID = '2zeITbbU6cgHT0mdBscQtmp0-gzGzoHsz'
@@ -10,6 +12,7 @@
 				appKey: APP_KEY
 			})
 		},
+		//获取所有数据
 		fetch: function () {
 			var query = new AV.Query('Message')
 			return query.find() //Promise 对象
@@ -24,6 +27,7 @@
 			})
 		}
 	}
+	// MVC 的 C
 	var controller = {
 		view: null,
 		model: null,
