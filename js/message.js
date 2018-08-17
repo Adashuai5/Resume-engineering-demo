@@ -1,18 +1,7 @@
 ! function () {
 	var view = document.querySelector('section.message')
-
-	var controller = {
-		view: null,
-		messageList: null,
-		init: function (view) {
-			this.view = view
-			this.messageList = view.querySelector('#messageList')
-			this.form = view.querySelector('form')
-			this.initAV()
-			this.loadMessages()
-			this.bindEvents()
-		},
-		initAV: function () {
+	var model = {
+		init: function () {
 			var APP_ID = '2zeITbbU6cgHT0mdBscQtmp0-gzGzoHsz'
 			var APP_KEY = 'iByF5Dy55tJodAoxC4cxwAwx'
 
@@ -21,9 +10,35 @@
 				appKey: APP_KEY
 			})
 		},
+		fetch: function () {
+			var query = new AV.Query('Message')
+			return query.find() //Promise 对象
+		},
+		//创建数据
+		save: function (name,content) {
+			var Message = AV.Object.extend('Message');
+			var message = new Message();
+			return message.save({ //Promise 对象
+				name: name,
+				content: content
+			})
+		}
+	}
+	var controller = {
+		view: null,
+		model: null,
+		messageList: null,
+		init: function (view, model) {
+			this.view = view
+			this.model = model
+			this.messageList = view.querySelector('#messageList')
+			this.form = view.querySelector('form')
+			this.model.init()
+			this.loadMessages()
+			this.bindEvents()
+		},
 		loadMessages: function () {
-			var query = new AV.Query('Message');
-			query.find().then((messages) => {
+			this.model.fetch().then((messages) => {
 				let array = messages.map((item) => item.attributes)
 				array.forEach((item) => {
 					let li = document.createElement('li')
@@ -42,12 +57,7 @@
 			let myForm = this.form
 			let content = myForm.querySelector('input[name=content]').value
 			let name = myForm.querySelector('input[name=name]').value
-			var Message = AV.Object.extend('Message');
-			var message = new Message();
-			message.save({
-				name: name,
-				content: content
-			}).then(function (object) {
+			this.model.save(name, content).then(function (object) {
 				let li = document.createElement('li')
 				li.innerText = `${object.attributes.name} : ${object.attributes.content}`
 				let messageList = document.querySelector('#messageList')
@@ -57,5 +67,5 @@
 			})
 		}
 	}
-	controller.init(view)
+	controller.init(view, model)
 }.call()
