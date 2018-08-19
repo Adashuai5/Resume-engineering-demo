@@ -194,7 +194,19 @@
     </section>
     <section class="message">
         <h2>留言</h2>
-        <ol id="messageList"></ol>
+        <ol id="messageList">
+            <li>周元达 : 你好！
+                <button class="messageListUp">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-dianzan"></use>
+                    </svg>
+                    赞
+                </button>
+                <span class="on">n</span>
+            </li>
+            
+            
+        </ol>
         <form id="postMessageForm">
             <label for="name">姓名</label>
             <input type="text" id="name" name="name">
@@ -206,6 +218,8 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.10.0/dist/av-min.js"></script>
+    <script src="./js/base/View.js"></script>
+    <script src="./js/base/Model.js"></script>
     <!-- 模块化 -->
     <script src="./js/init-swiper.js"></script>
     <script src="./js/auto-slide-up.js"></script>
