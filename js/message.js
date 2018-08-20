@@ -13,6 +13,8 @@
 			this.messageList = view.querySelector('#messageList')
 			this.form = view.querySelector('form')
 			this.loadMessages()
+			// 这里的 this 是 object，但是 object 没有上面参数
+			// 所以才要 for...in...遍历一下，让 object 有这些 controller 独有的参数
 		},
 		loadMessages: function () {
 			this.model.fetch().then((messages) => {

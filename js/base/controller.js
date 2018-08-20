@@ -14,6 +14,7 @@ window.Controller = function (options) {
         },
     }
     // 把除 init 外的所有 options 的参数传给 object
+    // init 是公共参数，而其他实例独有的参数需要传进来
     for (let key in options) {
         if (key !== 'init') {
             object[key] = options[key]
