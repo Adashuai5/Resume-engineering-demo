@@ -1,4 +1,6 @@
 // Model 办事，我放心
+// 通过全局函数 window 引入 Model 便于所有 model 调用
+// 提供三个参数：Options、resourceName 和 object
 window.Model = function (Options) {
     let resourceName = Options.resourceName
     return {
@@ -11,10 +13,9 @@ window.Model = function (Options) {
                 appKey: APP_KEY
             })
         },
-        //获取所有数据
         fetch: function () {
             var query = new AV.Query(resourceName)
-            return query.find() //Promise 对象
+            return query.find()
         },
         //创建数据
         save: function (object) {
