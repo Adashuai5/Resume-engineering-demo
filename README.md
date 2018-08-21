@@ -1,5 +1,7 @@
 # My-resume
 
+[resume 初版本](https://github.com/Adashuai5/resume)
+
 ##MVC 相关博客  
 [MVC 初尝试之 V 和 C](https://zhuanlan.zhihu.com/p/42366912)  
 ##添加留言栏  
