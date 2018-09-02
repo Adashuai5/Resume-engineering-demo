@@ -9,7 +9,7 @@
 	// MVC 的 C
 	// 1.controller === object
 	var controller = Controller({
-		init: function (view, controller) {
+		init: function () {
 			this.messageList = view.querySelector('#messageList')
 			this.form = view.querySelector('form')
 			this.loadMessages()
