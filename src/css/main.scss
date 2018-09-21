@@ -80,48 +80,48 @@ h6 {
     top: 0px;
     left: 0px;
     color: #ccced1;
-}
 
-.topNavBar.sticky {
-    background: white;
-    padding: 10px 0;
-    transition: .5s;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
-    color: #3d4451;
-    z-index: 1;
-}
+    &.sticky {
+        background: white;
+        padding: 10px 0;
+        transition: .5s;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+        color: #3d4451;
+        z-index: 1;
+    }
 
-.topNavBar-inner {
-    padding: 0 16px;
-}
+    &-inner {
+        padding: 0 16px;
+    }
 
-.topNavBar nav {
-    float: right;
-    padding-top: 4px;
-}
+    nav {
+        float: right;
+        padding-top: 4px;
 
-.topNavBar nav>ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    line-height: 33px;
-}
+        >ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            line-height: 33px;
 
-.topNavBar nav>ul>li {
-    float: left;
-    margin-left: 17px;
-    margin-right: 17px;
-    position: relative;
-    cursor: pointer;
-}
+            >li {
+                float: left;
+                margin-left: 17px;
+                margin-right: 17px;
+                position: relative;
+                cursor: pointer;
 
-.topNavBar nav>ul>li>a {
-    font-size: 12px;
-    font-weight: bold;
-    border-bottom: 3px solid transparent;
-    display: block;
-    color: inherit;
-    position: relative;
+                >a {
+                    font-size: 12px;
+                    font-weight: bold;
+                    border-bottom: 3px solid transparent;
+                    display: block;
+                    color: inherit;
+                    position: relative;
+                }
+            }
+        }
+    }
 }
 
 .topNavBar nav>ul>li.active>a::after,
@@ -141,6 +141,7 @@ h6 {
     0% {
         width: 0;
     }
+
     100% {
         width: 100%;
     }
@@ -165,6 +166,7 @@ h6 {
     0% {
         margin: 100%;
     }
+
     100% {
         margin: 0%;
     }
@@ -193,7 +195,7 @@ h6 {
 
 .banner {
     height: 515px;
-    background-image: url(./img/wallhaven-244705.jpg);
+    background-image: url(../img/background-image.jpg);
     background-position: center center;
     background-size: cover;
 }
@@ -419,6 +421,12 @@ section.portfolio .swiper-button-next {
     left: auto;
     /* 由于利用父元素的方法均无法让按钮垂直居中，而元素固定宽高，因此直接调高度 */
     top: 313px;
+    outline: none;
+}
+
+section.portfolio .swiper-button-prev,
+section.portfolio .swiper-button-next {
+    border: 1px solid gold;
 }
 
 section.portfolio .swiper-button-next {

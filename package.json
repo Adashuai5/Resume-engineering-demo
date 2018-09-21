@@ -1,0 +1,26 @@
+{
+  "name": "my-resume",
+  "version": "1.0.0",
+  "description": "[resume 初版本](https://github.com/Adashuai5/resume)",
+  "main": "index.js",
+  "dependencies": {
+    "babel-preset-env": "^1.7.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel js -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adashuai5/My-resume.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Adashuai5/My-resume/issues"
+  },
+  "homepage": "https://github.com/Adashuai5/My-resume#readme"
+}

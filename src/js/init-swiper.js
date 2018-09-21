@@ -22,7 +22,7 @@
                 this.view.querySelector('.swiper-container'), 
                 this.swiperOptions
             )
-        },
+        }
     }
     controller.init(view)
 }.call()

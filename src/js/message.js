@@ -1,9 +1,9 @@
 ! function () {
 	// MVC 的 V
 	// 这里 window.View 的 window 可以省略，是默认的
-	var view = View('section.message')
+	let view = View('section.message')
 	//添加 M
-	var model = Model({
+	let model = Model({
 		resourceName: 'Message'
 	})
 	// MVC 的 C
