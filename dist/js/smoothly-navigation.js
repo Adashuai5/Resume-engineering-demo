@@ -1,25 +1,27 @@
+'use strict';
+
 !function () {
     var view = View('nav.menu');
     var controller = {
         view: null,
         aTags: null,
-        init: function (view) {
+        init: function init(view) {
             this.view = view;
             this.initAnimation();
             this.bindEvents();
         },
-        initAnimation: function () {
+        initAnimation: function initAnimation() {
             function animate(time) {
                 requestAnimationFrame(animate);
                 TWEEN.update(time);
             }
             requestAnimationFrame(animate);
         },
-        scrollToElement: function (element) {
-            let top = element.offsetTop;
-            let currentTop = window.scrollY;
-            let targetTop = top - 80;
-            let s = targetTop - currentTop; //路程
+        scrollToElement: function scrollToElement(element) {
+            var top = element.offsetTop;
+            var currentTop = window.scrollY;
+            var targetTop = top - 80;
+            var s = targetTop - currentTop; //路程
             var coords = {
                 y: currentTop
             }; //起始位置
@@ -37,15 +39,17 @@
                 window.scrollTo(0, coords.y); //如何更新界面
             }).start(); //开始缓动
         },
-        bindEvents: function () {
-            let aTags = this.view.querySelectorAll('nav.menu > ul > li > a');
-            for (let i = 0; i < aTags.length; i++) {
-                aTags[i].onclick = x => {
+        bindEvents: function bindEvents() {
+            var _this = this;
+
+            var aTags = this.view.querySelectorAll('nav.menu > ul > li > a');
+            for (var i = 0; i < aTags.length; i++) {
+                aTags[i].onclick = function (x) {
                     x.preventDefault();
-                    let a = x.currentTarget;
-                    let href = a.getAttribute('href'); //'#siteAbout'
-                    let element = document.querySelector(href);
-                    this.scrollToElement(element);
+                    var a = x.currentTarget;
+                    var href = a.getAttribute('href'); //'#siteAbout'
+                    var element = document.querySelector(href);
+                    _this.scrollToElement(element);
                 };
             }
         }

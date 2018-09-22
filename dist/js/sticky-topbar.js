@@ -1,25 +1,29 @@
+'use strict';
+
 !function () {
     var view = View('#topNavBar');
     var controller = {
         view: null,
-        init: function (view) {
+        init: function init(view) {
             this.view = view;
             this.bindEvents();
         },
-        bindEvents: function () {
+        bindEvents: function bindEvents() {
+            var _this = this;
+
             var view = this.view;
-            window.addEventListener('scroll', x => {
+            window.addEventListener('scroll', function (x) {
                 if (window.scrollY > 0) {
-                    this.active();
+                    _this.active();
                 } else {
-                    this.deactive();
+                    _this.deactive();
                 }
             });
         },
-        active: function () {
+        active: function active() {
             this.view.classList.add('sticky');
         },
-        deactive: function () {
+        deactive: function deactive() {
             this.view.classList.remove('sticky');
         }
     };
